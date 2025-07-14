@@ -2,17 +2,24 @@ import React, { useState, useRef } from 'react';
 import { motion, useSpring, useTransform } from 'framer-motion';
 import { useRive } from '@rive-app/react-canvas';
 import { useTheme } from '../contexts/ThemeContext';
+import ProjectDetailsPanel from './projects/ProjectDetailsPanel';
+import { getProjectById } from '../data/projectDetails';
 import { 
   ArrowTopRightOnSquareIcon, 
   StarIcon,
   ChartBarIcon,
-  BuildingOfficeIcon
+  BuildingOfficeIcon,
+  EyeIcon
 } from '@heroicons/react/24/outline';
 
 const ProjectCard = ({ project, index }) => {
   const { theme } = useTheme();
   const [isHovered, setIsHovered] = useState(false);
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
   const cardRef = useRef(null);
+  
+  // Get detailed project data
+  const projectDetails = getProjectById(project.id || project.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''));
   
   // Mouse position for 3D tilt effect
   const mouseX = useSpring(0, { stiffness: 500, damping: 100 });
@@ -169,13 +176,15 @@ const ProjectCard = ({ project, index }) => {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               {/* Rive Animation Container */}
-              <div className="w-6 h-6 relative">
+              <div className="w-8 h-8 relative">
                 {riveLoaded && ProjectRive && rive ? (
                   <ProjectRive className="w-full h-full absolute inset-0" />
                 ) : (
                   /* Fallback to regular icon when Rive fails to load */
-                  <div className="w-full h-full flex items-center justify-center">
-                    {project.icon}
+                  <div className="w-full h-full flex items-center justify-center text-gray-700 dark:text-gray-300">
+                    {React.cloneElement(project.icon, { 
+                      className: "w-8 h-8 drop-shadow-sm" 
+                    })}
                   </div>
                 )}
               </div>
@@ -283,40 +292,47 @@ const ProjectCard = ({ project, index }) => {
             </div>
           </div>
           
-          {/* Action Button with Magnetic Effect */}
+          {/* Action Buttons */}
           <motion.div className="flex items-center justify-between">
-            {project.github ? (
-              <motion.a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-6 py-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-700 dark:text-gray-200 font-semibold rounded-xl shadow-md hover:shadow-lg border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -2,
-                  backgroundColor: theme === 'dark' ? "rgba(31, 41, 55, 0.95)" : "rgba(255, 255, 255, 0.95)"
-                }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                <span>View on GitHub</span>
-                <ArrowTopRightOnSquareIcon className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-              </motion.a>
-            ) : (
-              <motion.button 
-                className="group inline-flex items-center gap-2 px-6 py-3 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-700 dark:text-gray-200 font-semibold rounded-xl shadow-md hover:shadow-lg border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300"
-                whileHover={{ 
-                  scale: 1.05, 
-                  y: -2,
-                  backgroundColor: theme === 'dark' ? "rgba(31, 41, 55, 0.95)" : "rgba(255, 255, 255, 0.95)"
-                }}
-                whileTap={{ scale: 0.98 }}
-                transition={{ type: "spring", stiffness: 400, damping: 17 }}
-              >
-                <span>View Details</span>
-                <ArrowTopRightOnSquareIcon className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
-              </motion.button>
-            )}
+            <div className="flex items-center gap-3">
+              {/* View Details Button */}
+              {projectDetails && (
+                <motion.button
+                  onClick={() => setIsDetailsOpen(true)}
+                  className="group inline-flex items-center gap-2 px-4 py-2 bg-blue-600 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                  whileHover={{ 
+                    scale: 1.05, 
+                    y: -2,
+                    backgroundColor: "rgba(37, 99, 235, 0.9)"
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
+                  <EyeIcon className="w-4 h-4" />
+                  <span>Details</span>
+                </motion.button>
+              )}
+              
+              {/* GitHub Button */}
+              {project.github && (
+                <motion.a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 px-4 py-2 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-700 dark:text-gray-200 font-semibold rounded-xl shadow-md hover:shadow-lg border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300"
+                  whileHover={{ 
+                    scale: 1.05, 
+                    y: -2,
+                    backgroundColor: theme === 'dark' ? "rgba(31, 41, 55, 0.95)" : "rgba(255, 255, 255, 0.95)"
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                >
+                  <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+                  <span>GitHub</span>
+                </motion.a>
+              )}
+            </div>
             
             {/* Floating Metrics */}
             <motion.div 
@@ -359,6 +375,15 @@ const ProjectCard = ({ project, index }) => {
           transition={{ duration: 0.8, ease: "easeInOut" }}
         />
       </motion.div>
+
+      {/* Project Details Panel */}
+      {projectDetails && (
+        <ProjectDetailsPanel
+          project={projectDetails}
+          isOpen={isDetailsOpen}
+          onClose={() => setIsDetailsOpen(false)}
+        />
+      )}
     </motion.div>
   );
 };

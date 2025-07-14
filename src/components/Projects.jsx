@@ -22,12 +22,13 @@ const Projects = () => {
 
   const projects = [
     {
+      id: "peer-genius",
       title: "PeerGenius – AI-Powered Study Chat Platform",
       company: "Personal Project",
       description: "Full-stack app with LLM-powered group chats, summaries, and thread-based learning. Built with React, Tailwind, Firebase, MongoDB, LLaMA, LangChain, Node.js, and Express.js for intelligent peer-to-peer learning.",
       impact: "AI-Powered Learning • Thread-Based Discussions",
       tech: ["React", "Tailwind", "Firebase", "MongoDB", "LLaMA", "LangChain", "Node.js", "Express.js"],
-      icon: <UserGroupIcon className="w-6 h-6" />,
+      icon: <UserGroupIcon className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
       gradient: "from-purple-500 to-pink-600",
       bgColor: "bg-purple-50 dark:bg-purple-900/10",
       riveFile: "peer-genius.riv",
@@ -35,24 +36,26 @@ const Projects = () => {
       github: "https://github.com/SanchayGawande/PeerGenius"
     },
     {
+      id: "iconcern",
       title: "IConcern – Healthcare AI Chatbot",
       company: "Anthem Inc.",
       description: "LLM-based triage system using GPT-4 and LangChain for 10,000+ patient interactions. Enabled 50% better follow-up compliance, reduced latency by 30%. Built with React, Next.js, Flask, Node.js, FastAPI, GraphQL, AWS Lambda, and Firebase.",
       impact: "10K+ Patients • 50% Better Compliance • 30% Latency Reduction",
       tech: ["React", "Next.js", "Flask", "Node.js", "FastAPI", "GraphQL", "AWS Lambda", "Firebase", "GPT-4", "LangChain"],
-      icon: <SparklesIcon className="w-6 h-6" />,
+      icon: <SparklesIcon className="w-8 h-8 text-green-600 dark:text-green-400" />,
       gradient: "from-green-500 to-emerald-600",
       bgColor: "bg-green-50 dark:bg-green-900/10",
       riveFile: "healthcare-chatbot.riv",
       featured: true
     },
     {
+      id: "churn-prediction",
       title: "Churn Prediction Platform",
       company: "Infosys Ltd.",
       description: "ML-powered churn and fraud prediction dashboard with explainable insights. Boosted customer retention by 25%, used by 100K+ concurrent users. Built with Flask, React.js, PostgreSQL, D3.js, AWS EC2, Docker, BERT, and XGBoost.",
       impact: "100K+ Users • 25% Retention Boost • Real-time Predictions",
       tech: ["Flask", "React.js", "PostgreSQL", "D3.js", "AWS EC2", "Docker", "BERT", "XGBoost"],
-      icon: <ChartBarIcon className="w-6 h-6" />,
+      icon: <ChartBarIcon className="w-8 h-8 text-blue-600 dark:text-blue-400" />,
       gradient: "from-blue-500 to-indigo-600",
       bgColor: "bg-blue-50 dark:bg-blue-900/10",
       riveFile: "churn-prediction.riv",

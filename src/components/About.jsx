@@ -220,25 +220,25 @@ const About = () => {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { 
-                  icon: <SparklesIcon className="w-6 h-6 text-blue-500" />, 
+                  icon: <SparklesIcon className="w-8 h-8" />, 
                   number: "50+", 
                   label: "AI Tools Built",
                   color: "from-blue-500 to-cyan-500"
                 },
                 { 
-                  icon: <ChartBarIcon className="w-6 h-6 text-green-500" />, 
+                  icon: <ChartBarIcon className="w-8 h-8" />, 
                   number: "100K+", 
                   label: "Users Served",
                   color: "from-green-500 to-emerald-500"
                 },
                 { 
-                  icon: <CloudIcon className="w-6 h-6 text-purple-500" />, 
+                  icon: <CloudIcon className="w-8 h-8" />, 
                   number: "30%", 
                   label: "Latency Reduced",
                   color: "from-purple-500 to-pink-500"
                 },
                 { 
-                  icon: <BriefcaseIcon className="w-6 h-6 text-orange-500" />, 
+                  icon: <BriefcaseIcon className="w-8 h-8" />, 
                   number: "3+", 
                   label: "Years Experience",
                   color: "from-orange-500 to-red-500"
@@ -257,8 +257,10 @@ const About = () => {
                   } shadow-xl text-center group`}
                 >
                   <div className="mb-3 flex justify-center">
-                    <div className={`p-3 rounded-xl bg-gradient-to-r ${stat.color} bg-opacity-20`}>
-                      {stat.icon}
+                    <div className={`p-4 rounded-2xl bg-gradient-to-r ${stat.color} shadow-lg border-2 border-white/20`}>
+                      {React.cloneElement(stat.icon, { 
+                        className: "w-8 h-8 text-white drop-shadow-lg" 
+                      })}
                     </div>
                   </div>
                   <div className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">

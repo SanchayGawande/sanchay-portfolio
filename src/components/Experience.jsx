@@ -294,11 +294,11 @@ const Experience = () => {
                               initial={{ opacity: 0, scale: 0.8 }}
                               animate={{ opacity: 1, scale: 1 }}
                               transition={{ delay: (index * 0.2) + (i * 0.05) }}
-                              className={`px-3 py-1 rounded-full text-sm font-medium bg-gradient-to-r ${experience.color} bg-opacity-20 border border-current/20`}
-                              style={{ 
-                                color: experience.color.includes('blue') ? '#3B82F6' : 
-                                       experience.color.includes('green') ? '#10B981' : '#8B5CF6'
-                              }}
+                              className={`px-3 py-1 rounded-full text-sm font-medium ${
+                                theme === 'dark'
+                                  ? 'bg-blue-500/20 text-blue-300 border border-blue-400/30'
+                                  : 'bg-blue-500/10 text-blue-700 border border-blue-500/30'
+                              }`}
                             >
                               {tech}
                             </motion.span>
