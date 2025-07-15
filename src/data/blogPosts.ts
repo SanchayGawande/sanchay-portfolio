@@ -1,14 +1,16 @@
-import { BlogPost } from '../types';
-import { calculateReadingTime } from '../utils/readingTime';
+import { BlogPost } from "../types";
+import { calculateReadingTime } from "../utils/readingTime";
 
 // Clean blog posts data without template literal conflicts
-const blogPostsData: Omit<BlogPost, 'readingTime'>[] = [
+const blogPostsData: Omit<BlogPost, "readingTime">[] = [
   {
-    slug: 'react-performance-optimization-guide',
-    title: 'React Performance Optimization: A Complete Guide for Production Applications',
-    description: 'Learn advanced React performance optimization techniques including memoization, code splitting, and profiling tools to build lightning-fast applications.',
-    date: '2024-01-20',
-    tags: ['React', 'Performance', 'JavaScript', 'Frontend', 'Optimization'],
+    slug: "react-performance-optimization-guide",
+    title:
+      "React Performance Optimization: A Complete Guide for Production Applications",
+    description:
+      "Learn advanced React performance optimization techniques including memoization, code splitting, and profiling tools to build lightning-fast applications.",
+    date: "2023-01-20",
+    tags: ["React", "Performance", "JavaScript", "Frontend", "Optimization"],
     content: `
 # React Performance Optimization: A Complete Guide
 
@@ -348,18 +350,20 @@ React performance optimization is an ongoing process. Focus on measuring first, 
 Remember: "Premature optimization is the root of all evil" - optimize based on real performance data, not assumptions.
     `,
     author: {
-      name: 'Sanchay Gawande',
-      avatar: '/images/profile.jpg'
+      name: "Sanchay Gawande",
+      avatar: "/images/profile.jpg",
     },
     views: 1580,
-    featured: true
+    featured: true,
   },
   {
-    slug: 'ai-prompt-engineering-production-systems',
-    title: 'AI Prompt Engineering for Production Systems: Advanced Techniques and Best Practices',
-    description: 'Master prompt engineering for production AI applications with proven techniques, error handling strategies, and performance optimization methods.',
-    date: '2024-01-15',
-    tags: ['AI', 'Prompt Engineering', 'LLM', 'Production', 'GPT', 'Claude'],
+    slug: "ai-prompt-engineering-production-systems",
+    title:
+      "AI Prompt Engineering for Production Systems: Advanced Techniques and Best Practices",
+    description:
+      "Master prompt engineering for production AI applications with proven techniques, error handling strategies, and performance optimization methods.",
+    date: "2024-07-15",
+    tags: ["AI", "Prompt Engineering", "LLM", "Production", "GPT", "Claude"],
     content: `
 # AI Prompt Engineering for Production Systems
 
@@ -937,18 +941,27 @@ Key takeaways:
 Success in production AI applications comes from treating prompt engineering as a rigorous engineering discipline rather than an art form.
     `,
     author: {
-      name: 'Sanchay Gawande',
-      avatar: '/images/profile.jpg'
+      name: "Sanchay Gawande",
+      avatar: "/images/profile.jpg",
     },
     views: 942,
-    featured: true
+    featured: true,
   },
   {
-    slug: 'modern-web-architecture-microservices',
-    title: 'Modern Web Architecture: Building Scalable Microservices with Node.js and React',
-    description: 'Learn how to design and implement scalable microservices architecture using Node.js, React, and modern DevOps practices for enterprise applications.',
-    date: '2024-01-10',
-    tags: ['Architecture', 'Microservices', 'Node.js', 'React', 'DevOps', 'Scalability'],
+    slug: "modern-web-architecture-microservices",
+    title:
+      "Modern Web Architecture: Building Scalable Microservices with Node.js and React",
+    description:
+      "Learn how to design and implement scalable microservices architecture using Node.js, React, and modern DevOps practices for enterprise applications.",
+    date: "2023-05-10",
+    tags: [
+      "Architecture",
+      "Microservices",
+      "Node.js",
+      "React",
+      "DevOps",
+      "Scalability",
+    ],
     content: `
 # Modern Web Architecture: Building Scalable Microservices
 
@@ -2001,18 +2014,25 @@ Key takeaways:
 Success with microservices comes from balancing the benefits of distribution with the complexity it introduces. Start simple and evolve your architecture as your understanding and requirements grow.
     `,
     author: {
-      name: 'Sanchay Gawande',
-      avatar: '/images/profile.jpg'
+      name: "Sanchay Gawande",
+      avatar: "/images/profile.jpg",
     },
     views: 763,
-    featured: false
+    featured: false,
   },
   {
-    slug: 'typescript-best-practices-enterprise',
-    title: 'TypeScript Best Practices for Enterprise Applications',
-    description: 'Learn advanced TypeScript patterns, strict configurations, and architectural decisions for large-scale applications that improve maintainability and developer experience.',
-    date: '2024-01-15',
-    tags: ['TypeScript', 'Enterprise', 'Architecture', 'JavaScript', 'Best Practices'],
+    slug: "typescript-best-practices-enterprise",
+    title: "TypeScript Best Practices for Enterprise Applications",
+    description:
+      "Learn advanced TypeScript patterns, strict configurations, and architectural decisions for large-scale applications that improve maintainability and developer experience.",
+    date: "2024-11-15",
+    tags: [
+      "TypeScript",
+      "Enterprise",
+      "Architecture",
+      "JavaScript",
+      "Best Practices",
+    ],
     content: `
 # TypeScript Best Practices for Enterprise Applications
 
@@ -2396,18 +2416,19 @@ Key takeaways:
 The investment in proper TypeScript patterns pays dividends in reduced bugs, improved refactoring confidence, and better team collaboration.
     `,
     author: {
-      name: 'Sanchay Gawande',
-      avatar: '/images/profile.jpg'
+      name: "Sanchay Gawande",
+      avatar: "/images/profile.jpg",
     },
     views: 1234,
-    featured: true
+    featured: true,
   },
   {
-    slug: 'docker-kubernetes-production-deployment',
-    title: 'Docker & Kubernetes: Production Deployment Strategies',
-    description: 'Complete guide to containerizing applications with Docker and orchestrating them with Kubernetes for production environments, including security, monitoring, and CI/CD integration.',
-    date: '2024-01-10',
-    tags: ['Docker', 'Kubernetes', 'DevOps', 'Production', 'Containers'],
+    slug: "docker-kubernetes-production-deployment",
+    title: "Docker & Kubernetes: Production Deployment Strategies",
+    description:
+      "Complete guide to containerizing applications with Docker and orchestrating them with Kubernetes for production environments, including security, monitoring, and CI/CD integration.",
+    date: "2023-02-12",
+    tags: ["Docker", "Kubernetes", "DevOps", "Production", "Containers"],
     content: `
 # Docker & Kubernetes: Production Deployment Strategies
 
@@ -2919,18 +2940,19 @@ Key takeaways:
 The investment in proper containerization and orchestration practices pays dividends in operational efficiency, system reliability, and team productivity.
     `,
     author: {
-      name: 'Sanchay Gawande',
-      avatar: '/images/profile.jpg'
+      name: "Sanchay Gawande",
+      avatar: "/images/profile.jpg",
     },
     views: 987,
-    featured: false
+    featured: false,
   },
   {
-    slug: 'api-design-graphql-rest-comparison',
-    title: 'API Design: GraphQL vs REST - When to Use Each',
-    description: 'Comprehensive comparison of GraphQL and REST API architectures, including real-world use cases, performance considerations, and implementation strategies for modern applications.',
-    date: '2024-01-05',
-    tags: ['API Design', 'GraphQL', 'REST', 'Backend', 'Architecture'],
+    slug: "api-design-graphql-rest-comparison",
+    title: "API Design: GraphQL vs REST - When to Use Each",
+    description:
+      "Comprehensive comparison of GraphQL and REST API architectures, including real-world use cases, performance considerations, and implementation strategies for modern applications.",
+    date: "2022-09-09",
+    tags: ["API Design", "GraphQL", "REST", "Backend", "Architecture"],
     content: `
 # API Design: GraphQL vs REST - When to Use Each
 
@@ -3553,18 +3575,19 @@ Key decision factors:
 The best choice depends on your specific requirements, team capabilities, and long-term maintenance considerations.
     `,
     author: {
-      name: 'Sanchay Gawande',
-      avatar: '/images/profile.jpg'
+      name: "Sanchay Gawande",
+      avatar: "/images/profile.jpg",
     },
     views: 1567,
-    featured: false
+    featured: false,
   },
   {
-    slug: 'web-performance-optimization-core-vitals',
-    title: 'Web Performance Optimization: Mastering Core Web Vitals',
-    description: 'Complete guide to optimizing web performance focusing on Core Web Vitals, including real-world techniques for improving LCP, FID, and CLS metrics in production applications.',
-    date: '2023-12-28',
-    tags: ['Performance', 'Web Vitals', 'Frontend', 'Optimization', 'SEO'],
+    slug: "web-performance-optimization-core-vitals",
+    title: "Web Performance Optimization: Mastering Core Web Vitals",
+    description:
+      "Complete guide to optimizing web performance focusing on Core Web Vitals, including real-world techniques for improving LCP, FID, and CLS metrics in production applications.",
+    date: "2023-12-28",
+    tags: ["Performance", "Web Vitals", "Frontend", "Optimization", "SEO"],
     content: `
 # Web Performance Optimization: Mastering Core Web Vitals
 
@@ -4148,68 +4171,77 @@ Key strategies:
 Regular monitoring and performance budgets ensure sustained improvements and prevent performance regressions in production applications.
     `,
     author: {
-      name: 'Sanchay Gawande',
-      avatar: '/images/profile.jpg'
+      name: "Sanchay Gawande",
+      avatar: "/images/profile.jpg",
     },
     views: 2156,
-    featured: true
-  }
+    featured: true,
+  },
 ];
 
 // Calculate reading time for each post and create final blog posts
-export const blogPosts: BlogPost[] = blogPostsData.map(post => ({
+export const blogPosts: BlogPost[] = blogPostsData.map((post) => ({
   ...post,
-  readingTime: calculateReadingTime(post.content)
+  readingTime: calculateReadingTime(post.content),
 }));
 
 // Utility functions
 export const getAllBlogPosts = (): BlogPost[] => {
-  return blogPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return blogPosts.sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 };
 
 export const getBlogPost = (slug: string): BlogPost | null => {
-  return blogPosts.find(post => post.slug === slug) || null;
+  return blogPosts.find((post) => post.slug === slug) || null;
 };
 
 export const getBlogPostsByTag = (tag: string): BlogPost[] => {
-  return blogPosts.filter(post => 
-    post.tags.some(postTag => postTag.toLowerCase() === tag.toLowerCase())
+  return blogPosts.filter((post) =>
+    post.tags.some((postTag) => postTag.toLowerCase() === tag.toLowerCase())
   );
 };
 
 export const getFeaturedBlogPosts = (): BlogPost[] => {
-  return blogPosts.filter(post => post.featured);
+  return blogPosts.filter((post) => post.featured);
 };
 
 export const getAllTags = (): string[] => {
   const tags = new Set<string>();
-  blogPosts.forEach(post => {
-    post.tags.forEach(tag => tags.add(tag));
+  blogPosts.forEach((post) => {
+    post.tags.forEach((tag) => tags.add(tag));
   });
   return Array.from(tags).sort();
 };
 
 export const searchBlogPosts = (query: string): BlogPost[] => {
-  const searchTerms = query.toLowerCase().split(' ');
-  
-  return blogPosts.filter(post => {
+  const searchTerms = query.toLowerCase().split(" ");
+
+  return blogPosts.filter((post) => {
     const searchableContent = [
       post.title,
       post.description,
       post.content,
-      ...post.tags
-    ].join(' ').toLowerCase();
+      ...post.tags,
+    ]
+      .join(" ")
+      .toLowerCase();
 
-    return searchTerms.every(term => searchableContent.includes(term));
+    return searchTerms.every((term) => searchableContent.includes(term));
   });
 };
 
-export const getRelatedPosts = (currentPost: BlogPost, limit: number = 3): BlogPost[] => {
-  const otherPosts = blogPosts.filter(post => post.slug !== currentPost.slug);
+export const getRelatedPosts = (
+  currentPost: BlogPost,
+  limit: number = 3
+): BlogPost[] => {
+  const otherPosts = blogPosts.filter((post) => post.slug !== currentPost.slug);
 
   // Score posts based on tag overlap
-  const scoredPosts = otherPosts.map(post => {
-    const commonTags = post.tags.filter(tag => currentPost.tags.includes(tag));
+  const scoredPosts = otherPosts.map((post) => {
+    const commonTags = post.tags.filter((tag) =>
+      currentPost.tags.includes(tag)
+    );
     const score = commonTags.length;
     return { post, score };
   });
@@ -4218,5 +4250,5 @@ export const getRelatedPosts = (currentPost: BlogPost, limit: number = 3): BlogP
   return scoredPosts
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)
-    .map(item => item.post);
+    .map((item) => item.post);
 };
