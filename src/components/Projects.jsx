@@ -28,9 +28,9 @@ const Projects = () => {
       description: "Context-aware AI response system with 95% accuracy in academic query detection, implementing logic to differentiate solo vs group study modes. Built with React 19, Vite, Express, MongoDB, Firebase Auth, and Radix UI.",
       impact: "95% Accuracy • AI-Powered Learning • CI/CD Pipeline",
       tech: ["React 19", "Vite", "Express", "MongoDB", "Firebase Auth", "Radix UI", "JWT", "CI/CD"],
-      icon: <UserGroupIcon className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
-      gradient: "from-purple-500 to-pink-600",
-      bgColor: "bg-purple-50 dark:bg-purple-900/10",
+      icon: <UserGroupIcon className="w-8 h-8 text-teal-600 dark:text-teal-400" />,
+      gradient: "from-slate-600 to-teal-500",
+      bgColor: "bg-slate-50 dark:bg-slate-900/10",
       riveFile: "peer-genius.riv",
       featured: true,
       github: "https://github.com/SanchayGawande/PeerGenius"
@@ -88,7 +88,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="relative py-32 bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/20 dark:from-dark-bg dark:via-dark-surface/50 dark:to-dark-card/30 overflow-hidden">
+    <section id="projects" className="relative py-32 bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-50/20 dark:from-dark-bg dark:via-dark-surface/50 dark:to-dark-card/30 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -157,7 +157,7 @@ const Projects = () => {
           >
             Production-Ready
             <br />
-            <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-slate-600 to-teal-500 bg-clip-text text-transparent">
               Impact Projects
             </span>
           </motion.h2>
@@ -247,7 +247,7 @@ const Projects = () => {
               whileHover={{ y: -3 }}
               whileTap={{ scale: 0.98 }}
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-slate-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <CodeBracketIcon className="w-5 h-5 relative z-10 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
               <span className="relative z-10">Explore All Projects</span>
               <motion.div

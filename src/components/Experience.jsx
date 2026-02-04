@@ -29,9 +29,9 @@ const Experience = () => {
       location: "Remote, USA",
       type: "Full-time",
       logo: "/suno-logo.png",
-      color: "from-purple-500 to-violet-600",
+      color: "from-slate-600 to-blue-600",
       achievements: [
-        "Architected the core multi-model LLM orchestration layer using FastAPI, serving as the primary engineering owner for the ERP platform AI capabilities from design to production",
+        "Architected the core multi-model LLM orchestration layer using Rust, serving as the primary engineering owner for the ERP platform AI capabilities from design to production",
         "Designed a stateful RAG system using Pinecone and metadata-driven routing, enabling long-running AI assistants to maintain context across complex financial analysis workflows",
         "Engineered an asynchronous ingestion pipeline using AWS Lambda and SQS to merge multi-tab Excel workbooks, reducing user-facing ingestion latency by 40%",
         "Built a tool calling infrastructure (MCP server) integrating Claude and GPT-4 pipelines, enabling the AI to trigger real-time actions like macro generation",
@@ -40,7 +40,7 @@ const Experience = () => {
       ],
       technologies: ["Python", "FastAPI", "LangChain", "Pinecone", "AWS Lambda", "SQS", "ECS", "Claude", "GPT-4", "RAG", "Docker"],
       highlights: [
-        { icon: <SparklesIcon className="w-5 h-5 text-purple-500" />, text: "LLM orchestration layer" },
+        { icon: <SparklesIcon className="w-5 h-5 text-teal-500" />, text: "LLM orchestration layer" },
         { icon: <CloudIcon className="w-5 h-5 text-blue-500" />, text: "Stateful RAG system" },
         { icon: <CheckCircleIcon className="w-5 h-5 text-green-500" />, text: "40% latency reduction" }
       ]
@@ -55,7 +55,7 @@ const Experience = () => {
       logo: "/headstarter-logo.png",
       color: "from-blue-500 to-indigo-600",
       achievements: [
-        "Built multiple full-stack and AI-driven applications end-to-end using Python, FastAPI, Node.js, React, PostgreSQL, and AWS, delivering production-quality features under weekly release cycles",
+        "Built multiple full-stack and AI-driven applications end-to-end using Python, Rust, FastAPI, Node.js, React, PostgreSQL, and AWS, delivering production-quality features under weekly release cycles",
         "Integrated AI/ML features such as LLM-powered components, inference workflows, and data processing services into application architectures",
         "Implemented model-driven features using PyTorch and scikit-learn in Python for training, evaluation, and error analysis",
         "Led peer code reviews, provided PR-level feedback, and enforced coding practices that improved code quality and reduced debugging time",
@@ -65,7 +65,7 @@ const Experience = () => {
       technologies: ["Python", "FastAPI", "Node.js", "React", "PostgreSQL", "AWS", "PyTorch", "scikit-learn", "Docker", "GitHub Actions"],
       highlights: [
         { icon: <ChartBarIcon className="w-5 h-5 text-green-500" />, text: "Full-stack AI applications" },
-        { icon: <SparklesIcon className="w-5 h-5 text-purple-500" />, text: "ML model integration" },
+        { icon: <SparklesIcon className="w-5 h-5 text-teal-500" />, text: "ML model integration" },
         { icon: <CheckCircleIcon className="w-5 h-5 text-blue-500" />, text: "Top performer" }
       ]
     },
@@ -79,7 +79,7 @@ const Experience = () => {
       logo: "/umass-logo.png",
       color: "from-green-500 to-emerald-600",
       achievements: [
-        "Designed a decoupled architecture for a patient guidance platform, separating the React frontend from the Python inference backend to enable independent scaling",
+        "Designed a decoupled architecture for a patient guidance platform, separating the React frontend from the Rust inference backend to enable independent scaling",
         "Implemented a hybrid search engine combining vector-based retrieval with metadata rules to structure nursing content, reducing LLM hallucinations in patient-facing responses",
         "Engineered authentication and state management services to ensure consistent behavior across distributed message sessions"
       ],
@@ -87,7 +87,7 @@ const Experience = () => {
       highlights: [
         { icon: <UserGroupIcon className="w-5 h-5 text-green-500" />, text: "Patient guidance platform" },
         { icon: <ChartBarIcon className="w-5 h-5 text-blue-500" />, text: "Hybrid search engine" },
-        { icon: <RocketLaunchIcon className="w-5 h-5 text-purple-500" />, text: "Reduced LLM hallucinations" }
+        { icon: <RocketLaunchIcon className="w-5 h-5 text-teal-500" />, text: "Reduced LLM hallucinations" }
       ]
     }
   ];
@@ -138,8 +138,8 @@ const Experience = () => {
           className="absolute top-1/4 -right-32 w-64 h-64 rounded-full"
           style={{
             background: theme === 'dark' 
-              ? 'linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(59, 130, 246, 0.1))'
-              : 'linear-gradient(135deg, rgba(147, 51, 234, 0.15), rgba(59, 130, 246, 0.15))',
+              ? 'linear-gradient(135deg, rgba(71, 85, 105, 0.1), rgba(59, 130, 246, 0.1))'
+              : 'linear-gradient(135deg, rgba(71, 85, 105, 0.15), rgba(59, 130, 246, 0.15))',
             filter: 'blur(60px)',
           }}
           animate={{
@@ -175,7 +175,7 @@ const Experience = () => {
             className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6"
           >
             Professional Journey &
-            <span className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent"> Impact</span>
+            <span className="bg-gradient-to-r from-slate-700 to-blue-600 bg-clip-text text-transparent"> Impact</span>
           </motion.h2>
 
           <motion.p 
@@ -192,7 +192,7 @@ const Experience = () => {
           {/* Timeline Line */}
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700">
             <motion.div
-              className="absolute inset-0 bg-gradient-to-b from-blue-500 to-purple-500 origin-top"
+              className="absolute inset-0 bg-gradient-to-b from-blue-500 to-slate-600 origin-top"
               variants={timelineVariants}
               initial="hidden"
               animate={isInView ? "visible" : "hidden"}
@@ -211,7 +211,7 @@ const Experience = () => {
                 className="relative"
               >
                 {/* Timeline Dot */}
-                <div className="absolute left-6 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full border-4 border-white dark:border-gray-900 z-10" />
+                <div className="absolute left-6 w-4 h-4 bg-gradient-to-r from-blue-500 to-slate-600 rounded-full border-4 border-white dark:border-gray-900 z-10" />
                 
                 {/* Content */}
                 <div className="ml-20">
@@ -307,7 +307,7 @@ const Experience = () => {
                         transition={{ type: "spring", stiffness: 300 }}
                       >
                         <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                          <CodeBracketIcon className="w-5 h-5 text-purple-500" />
+                          <CodeBracketIcon className="w-5 h-5 text-teal-500" />
                           Technologies Used
                         </h4>
                         <div className="flex flex-wrap gap-2">
@@ -406,7 +406,7 @@ const Experience = () => {
                 projectsSection.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-slate-600 to-blue-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >

@@ -11,7 +11,7 @@ import Projects from './components/Projects';
 import BlogRouter from './components/blog/BlogRouter';
 import Navigation from './components/Navigation';
 import CreativeThemeToggle from './components/CreativeThemeToggle';
-import CursorTrail from './components/CursorTrail';
+// Custom cursor removed - using system default pointer
 import ContactButton from './components/ContactButton';
 import NavContactButton from './components/NavContactButton';
 
@@ -32,8 +32,7 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider>
         <Router>
-          <div className="App min-h-screen bg-white dark:bg-dark-bg transition-colors duration-300 cursor-none">
-            <CursorTrail />
+          <div className="App min-h-screen bg-white dark:bg-dark-bg transition-colors duration-300">
             <Navigation />
             <CreativeThemeToggle />
             <NavContactButton />

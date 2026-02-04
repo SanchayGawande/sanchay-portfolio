@@ -2,24 +2,16 @@ import React, { useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import { skillsData } from '../data/skills';
-import SkillsRadarChart from './skills/SkillsRadarChart';
 import SkillsFilter from './skills/SkillsFilter';
 import SkillTooltip from './skills/SkillTooltip';
 import { Skill } from '../types';
-import { 
-  CpuChipIcon,
-  ChartBarIcon,
-  StarIcon,
-  CalendarIcon,
-  BriefcaseIcon
-} from '@heroicons/react/24/outline';
+import { CpuChipIcon, StarIcon, CalendarIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
 
 const InteractiveSkills: React.FC = () => {
   const { theme } = useTheme();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
-  const [viewMode, setViewMode] = useState<'radar' | 'grid'>('radar');
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
@@ -62,7 +54,7 @@ const InteractiveSkills: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.21, 1.11, 0.81, 0.99]
+        ease: [0.21, 1.11, 0.81, 0.99] as [number, number, number, number]
       }
     }
   };
@@ -74,7 +66,7 @@ const InteractiveSkills: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.4,
-        ease: "easeOut"
+        ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number]
       }
     }
   };
@@ -83,7 +75,7 @@ const InteractiveSkills: React.FC = () => {
     <section 
       id="skills"
       ref={sectionRef}
-      className="relative py-32 bg-gradient-to-br from-purple-50 via-white to-blue-50/30 dark:from-zinc-800 dark:via-zinc-900 dark:to-zinc-800 overflow-hidden"
+      className="relative py-32 bg-slate-50 dark:from-zinc-800 dark:via-zinc-900 dark:to-zinc-800 overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
@@ -91,8 +83,8 @@ const InteractiveSkills: React.FC = () => {
           className="absolute -top-40 -right-40 w-80 h-80 rounded-full"
           style={{
             background: theme === 'dark' 
-              ? 'linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(59, 130, 246, 0.1))'
-              : 'linear-gradient(135deg, rgba(147, 51, 234, 0.15), rgba(59, 130, 246, 0.15))',
+              ? 'linear-gradient(135deg, rgba(71, 85, 105, 0.1), rgba(59, 130, 246, 0.1))'
+              : 'linear-gradient(135deg, rgba(71, 85, 105, 0.15), rgba(59, 130, 246, 0.15))',
             filter: 'blur(60px)',
           }}
           animate={{
@@ -117,7 +109,7 @@ const InteractiveSkills: React.FC = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="mb-8">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium mb-4">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800/30 text-slate-800 dark:text-slate-300 rounded-full text-sm font-medium mb-4">
               <CpuChipIcon className="w-4 h-4" />
               Interactive Skills
             </span>
@@ -128,52 +120,17 @@ const InteractiveSkills: React.FC = () => {
             className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6"
           >
             Technical Expertise
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"> Visualization</span>
           </motion.h2>
 
           <motion.p 
             variants={itemVariants}
             className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
           >
-            Explore my technical skills through an interactive radar chart and detailed breakdowns
-            of experience, proficiency levels, and project applications.
+            Explore my technical skills with detailed breakdowns of experience,
+            proficiency levels, and project applications.
           </motion.p>
         </motion.div>
 
-        {/* View Mode Toggle */}
-        <motion.div 
-          variants={itemVariants}
-          className="flex justify-center mb-12"
-        >
-          <div className="flex items-center gap-2 p-2 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl border border-gray-200/50 dark:border-gray-700/50">
-            <motion.button
-              onClick={() => setViewMode('radar')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-200 ${
-                viewMode === 'radar'
-                  ? 'bg-purple-600 text-white shadow-lg'
-                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ChartBarIcon className="w-5 h-5" />
-              Radar View
-            </motion.button>
-            <motion.button
-              onClick={() => setViewMode('grid')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-200 ${
-                viewMode === 'grid'
-                  ? 'bg-purple-600 text-white shadow-lg'
-                  : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
-              }`}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <CpuChipIcon className="w-5 h-5" />
-              Grid View
-            </motion.button>
-          </div>
-        </motion.div>
 
         {/* Filter Controls */}
         <motion.div variants={itemVariants} className="mb-12">
@@ -197,58 +154,57 @@ const InteractiveSkills: React.FC = () => {
               theme === 'dark' 
                 ? 'bg-gray-800/50 border-gray-700/50' 
                 : 'bg-white/80 border-gray-200/50'
-            } shadow-xl`}>
-              {viewMode === 'radar' ? (
-                <SkillsRadarChart
-                  selectedCategory={selectedCategory}
-                  onCategorySelect={setSelectedCategory}
-                />
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-h-96 overflow-y-auto">
-                  {filteredSkills.map((skill, index) => (
-                    <motion.div
-                      key={skill.name}
-                      variants={skillVariants}
-                      initial="hidden"
-                      animate="visible"
-                      transition={{ delay: index * 0.1 }}
-                      className={`p-4 rounded-xl border cursor-pointer transition-all duration-200 ${
-                        theme === 'dark'
-                          ? 'bg-gray-800 border-gray-700 hover:bg-gray-700'
-                          : 'bg-white border-gray-200 hover:bg-gray-50'
-                      } hover:shadow-lg`}
-                      onClick={() => setSelectedSkill(skill)}
-                      whileHover={{ scale: 1.02, y: -2 }}
-                    >
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-semibold text-gray-900 dark:text-white">
-                          {skill.name}
-                        </h3>
-                        <div className="text-sm font-medium text-blue-600 dark:text-blue-400">
-                          {skill.level}%
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="text-xs text-gray-500 dark:text-gray-400">
-                          {skill.category}
-                        </span>
-                        <span className="text-xs text-gray-500 dark:text-gray-400">•</span>
-                        <span className="text-xs text-gray-500 dark:text-gray-400">
-                          {skill.yearsOfExperience} years
-                        </span>
-                      </div>
-                      
-                      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                        <motion.div
-                          className="bg-gradient-to-r from-purple-500 to-pink-500 h-2 rounded-full"
-                          initial={{ width: 0 }}
-                          animate={{ width: `${skill.level}%` }}
-                          transition={{ duration: 1, delay: index * 0.1 }}
-                        />
-                      </div>
-                    </motion.div>
-                  ))}
+            } shadow-sm`}>
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
+                {filteredSkills.map((skill, index) => (
+                  <motion.div
+                    key={skill.name}
+                    variants={skillVariants}
+                    initial="hidden"
+                    animate="visible"
+                    transition={{ delay: index * 0.05 }}
+                    className={`group p-4 rounded-lg border cursor-pointer transition-all duration-200 ${
+                      theme === 'dark'
+                        ? 'bg-gray-800 border-gray-700 hover:border-gray-600'
+                        : 'bg-white border-gray-200 hover:border-gray-300'
+                    } hover:shadow-md`}
+                    onClick={() => setSelectedSkill(skill)}
+                    whileHover={{ y: -2 }}
+                  >
+                    {/* Skill Header */}
+                    <div className="flex items-center justify-between mb-2">
+                      <h3 className="font-semibold text-gray-900 dark:text-white">
+                        {skill.name}
+                      </h3>
+                      <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+                        {skill.level}%
+                      </span>
+                    </div>
+                    
+                    {/* Progress Bar */}
+                    <div className="w-full bg-gray-100 dark:bg-gray-700 rounded-full h-1.5 mb-2">
+                      <motion.div
+                        className="bg-gray-400 dark:bg-gray-500 h-1.5 rounded-full"
+                        initial={{ width: 0 }}
+                        animate={{ width: `${skill.level}%` }}
+                        transition={{ duration: 0.8, delay: index * 0.03 }}
+                      />
+                    </div>
+                    
+                    {/* Meta Info */}
+                    <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                      <span>{skill.category}</span>
+                      <span>{skill.yearsOfExperience}+ yrs • {skill.confidenceLevel}</span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+              
+              {/* Empty State */}
+              {filteredSkills.length === 0 && (
+                <div className="text-center py-12">
+                  <CpuChipIcon className="w-16 h-16 mx-auto text-gray-300 dark:text-gray-600 mb-4" />
+                  <p className="text-gray-500 dark:text-gray-400">No skills found matching your criteria</p>
                 </div>
               )}
             </div>
@@ -256,11 +212,11 @@ const InteractiveSkills: React.FC = () => {
 
           {/* Skills Details */}
           <motion.div variants={itemVariants}>
-            <div className={`p-6 rounded-2xl backdrop-blur-sm border ${
+            <div className={`p-6 rounded-xl backdrop-blur-sm border ${
               theme === 'dark' 
                 ? 'bg-gray-800/50 border-gray-700/50' 
-                : 'bg-white/80 border-gray-200/50'
-            } shadow-xl`}>
+                : 'bg-white border-gray-200'
+            } shadow-sm`}>
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
                 Skills Overview
               </h3>
@@ -271,13 +227,13 @@ const InteractiveSkills: React.FC = () => {
                 <div className="space-y-4">
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                      <div className="text-2xl font-bold text-gray-700 dark:text-gray-300">
                         {skillsData.categories.length}
                       </div>
                       <div className="text-sm text-gray-600 dark:text-gray-400">Categories</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-purple-600 dark:text-purple-400">
+                      <div className="text-2xl font-bold text-gray-700 dark:text-gray-300">
                         {skillsData.categories.reduce((sum, cat) => sum + cat.skills.length, 0)}
                       </div>
                       <div className="text-sm text-gray-600 dark:text-gray-400">Total Skills</div>
@@ -324,11 +280,11 @@ const InteractiveSkills: React.FC = () => {
                 bgColor: "bg-green-500/20"
               },
               { 
-                icon: <CpuChipIcon className="w-10 h-10 text-purple-500" />, 
+                icon: <CpuChipIcon className="w-10 h-10 text-teal-500" />, 
                 value: "7", 
                 label: "Specializations",
-                color: "from-purple-500 to-pink-500",
-                bgColor: "bg-purple-500/20"
+                color: "from-slate-600 to-teal-500",
+                bgColor: "bg-teal-500/20"
               }
             ].map((stat, index) => (
               <motion.div

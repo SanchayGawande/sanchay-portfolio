@@ -69,13 +69,13 @@ I would absolutely recommend Sanchay for ML engineering, platform, or backend ro
   };
 
   return (
-    <section id="recommendations" className="relative py-24 bg-gradient-to-br from-slate-50 via-purple-50/30 to-blue-50/20 dark:from-dark-bg dark:via-dark-surface/50 dark:to-dark-card/30 overflow-hidden">
+    <section id="recommendations" className="relative py-24 bg-gradient-to-br from-slate-50 via-slate-50/30 to-blue-50/20 dark:from-dark-bg dark:via-dark-surface/50 dark:to-dark-card/30 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full"
           style={{
-            background: 'linear-gradient(135deg, rgba(147, 51, 234, 0.1), rgba(59, 130, 246, 0.1))',
+            background: 'linear-gradient(135deg, rgba(71, 85, 105, 0.1), rgba(59, 130, 246, 0.1))',
             filter: 'blur(60px)',
           }}
           animate={{
@@ -107,7 +107,7 @@ I would absolutely recommend Sanchay for ML engineering, platform, or backend ro
             animate={titleInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.2 }}
           >
-            <ChatBubbleBottomCenterTextIcon className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+            <ChatBubbleBottomCenterTextIcon className="w-4 h-4 text-teal-600 dark:text-teal-400" />
             <span className="text-sm font-medium text-gray-700 dark:text-dark-text">LinkedIn Recommendations</span>
           </motion.div>
 
@@ -145,7 +145,7 @@ I would absolutely recommend Sanchay for ML engineering, platform, or backend ro
               variants={cardVariants}
               className={`relative p-8 rounded-3xl backdrop-blur-sm border transition-all duration-300 group hover:scale-[1.02] ${
                 theme === 'dark'
-                  ? 'bg-dark-card/80 border-dark-border/50 hover:border-purple-500/50 shadow-dark-soft hover:shadow-dark-strong'
+                  ? 'bg-dark-card/80 border-dark-border/50 hover:border-teal-500/50 shadow-dark-soft hover:shadow-dark-strong'
                   : 'bg-white/80 border-gray-200/50 hover:border-purple-300 shadow-lg hover:shadow-xl'
               }`}
             >
@@ -157,7 +157,7 @@ I would absolutely recommend Sanchay for ML engineering, platform, or backend ro
               {/* Header */}
               <div className="flex items-start gap-4 mb-6">
                 {/* Avatar */}
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500 to-blue-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-teal-500 to-blue-600 flex items-center justify-center text-white font-bold text-xl shadow-lg">
                   {rec.name.split(' ').map(n => n[0]).join('')}
                 </div>
                 

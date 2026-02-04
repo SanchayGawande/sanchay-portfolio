@@ -132,13 +132,22 @@ export const skillsData: SkillsData = {
           confidenceLevel: 'Advanced',
           projectExamples: ['IConcern'],
           description: 'Schema design and resolver implementation'
+        },
+        {
+          name: 'Rust',
+          level: 75,
+          category: 'Language',
+          yearsOfExperience: 1,
+          confidenceLevel: 'Proficient',
+          projectExamples: ['Systems Programming', 'CLI Tools'],
+          description: 'Memory-safe systems programming with zero-cost abstractions'
         }
       ]
     },
     {
       id: 'ai',
       name: 'AI/ML/LLM',
-      color: 'from-purple-500 to-pink-500',
+      color: 'from-slate-600 to-teal-500',
       icon: 'SparklesIcon',
       skills: [
         {

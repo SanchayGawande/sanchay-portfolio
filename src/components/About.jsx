@@ -92,8 +92,8 @@ const About = () => {
           className="absolute -top-40 -right-40 w-80 h-80 rounded-full"
           style={{
             background: theme === 'dark' 
-              ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1))'
-              : 'linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(147, 51, 234, 0.15))',
+              ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(71, 85, 105, 0.1))'
+              : 'linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(71, 85, 105, 0.15))',
             filter: 'blur(60px)',
           }}
           animate={{
@@ -157,7 +157,7 @@ const About = () => {
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-medium transition-all duration-300 ${
                     activeTab === tab.id
-                      ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
+                      ? 'bg-gradient-to-r from-blue-500 to-slate-600 text-white shadow-lg'
                       : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50'
                   }`}
                 >
@@ -234,7 +234,7 @@ const About = () => {
                   icon: <CloudIcon className="w-8 h-8" />,
                   number: "30%",
                   label: "Latency Reduced",
-                  color: "from-purple-500 to-pink-500"
+                  color: "from-slate-600 to-teal-500"
                 },
                 {
                   icon: <BriefcaseIcon className="w-8 h-8" />,
@@ -291,7 +291,7 @@ const About = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.7 + index * 0.05 }}
-                    className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium border border-blue-200/50 dark:border-blue-700/50"
+                    className="px-3 py-1 bg-gradient-to-r from-blue-500/20 to-slate-500/20 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium border border-blue-200/50 dark:border-blue-700/50"
                   >
                     {tech}
                   </motion.span>
@@ -313,7 +313,7 @@ const About = () => {
                     skillsSection.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-slate-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

@@ -160,8 +160,8 @@ const HeroSection = () => {
   // Handle resume download
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/Sanchay_Gawande_Resume.pdf';
-    link.download = 'Sanchay_Gawande_Resume.pdf';
+    link.href = '/Sanchay_Gawande_Software_Engineer_Rust.pdf';
+    link.download = 'Sanchay_Gawande_Software_Engineer_Rust.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -189,8 +189,8 @@ const HeroSection = () => {
               className="w-full h-full"
               style={{
                 background: theme === 'dark' 
-                  ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(147, 51, 234, 0.1), rgba(16, 185, 129, 0.1))'
-                  : 'linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(147, 51, 234, 0.2), rgba(16, 185, 129, 0.2))',
+                  ? 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(71, 85, 105, 0.1), rgba(16, 185, 129, 0.1))'
+                  : 'linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(71, 85, 105, 0.2), rgba(20, 184, 166, 0.2))',
                 filter: 'blur(80px)',
               }}
               animate={{
@@ -220,7 +220,7 @@ const HeroSection = () => {
         <motion.div
           className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full"
           style={{
-            background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(147, 51, 234, 0.15))',
+            background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(71, 85, 105, 0.15))',
             filter: 'blur(60px)',
             transform: `translate(${mousePosition.x * 2}px, ${mousePosition.y * 2}px)`
           }}
@@ -238,7 +238,7 @@ const HeroSection = () => {
         <motion.div
           className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full"
           style={{
-            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(236, 72, 153, 0.15))',
+            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(20, 184, 166, 0.15))',
             filter: 'blur(50px)',
             transform: `translate(${mousePosition.x * -1.5}px, ${mousePosition.y * -1.5}px)`
           }}
@@ -309,7 +309,7 @@ const HeroSection = () => {
               variants={itemVariants}
             >
               <motion.div
-                className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-xl bg-gradient-to-br from-blue-500 to-purple-600 relative"
+                className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-xl bg-gradient-to-br from-blue-500 to-slate-600 relative"
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -352,7 +352,7 @@ const HeroSection = () => {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight">
                 Hi, I'm{' '}
                 <motion.span 
-                  className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 dark:from-blue-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent"
+                  className="bg-gradient-to-r from-blue-600 via-slate-600 to-teal-500 dark:from-blue-400 dark:via-slate-400 dark:to-teal-400 bg-clip-text text-transparent"
                   animate={{
                     backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
                   }}
@@ -363,11 +363,11 @@ const HeroSection = () => {
                   }}
                   style={{
                     backgroundSize: '200% auto',
-                    filter: 'drop-shadow(0 0 20px rgba(147, 51, 234, 0.3))'
+                    filter: 'drop-shadow(0 0 20px rgba(71, 85, 105, 0.3))'
                   }}
                   whileHover={{
                     scale: 1.05,
-                    textShadow: "0 0 30px rgba(147, 51, 234, 0.8)"
+                    textShadow: "0 0 30px rgba(71, 85, 105, 0.8)"
                   }}
                 >
                   Sanchay Gawande
@@ -452,7 +452,7 @@ const HeroSection = () => {
                 onClick={downloadResume}
                 onMouseMove={(e) => handleMouseMove(e, setIsHoveringResume)}
                 onMouseLeave={() => handleMouseLeave(setIsHoveringResume)}
-                className="group relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-600 text-white font-semibold rounded-2xl shadow-2xl overflow-hidden backdrop-blur-xl"
+                className="group relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-slate-600 dark:from-blue-500 dark:to-slate-600 text-white font-semibold rounded-2xl shadow-2xl overflow-hidden backdrop-blur-xl"
                 whileHover={{ 
                   scale: 1.08, 
                   y: -4,
@@ -463,7 +463,7 @@ const HeroSection = () => {
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 bg-gradient-to-r from-slate-500 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 />
                 <motion.div
                   className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"

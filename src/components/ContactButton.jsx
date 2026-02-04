@@ -30,7 +30,7 @@ const ContactButton = () => {
         onClick={openDrawer}
         className={`fixed bottom-6 right-6 sm:bottom-8 sm:right-8 z-40 group ${
           theme === 'dark' 
-            ? 'bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700' 
+            ? 'bg-gradient-to-r from-blue-600 to-slate-600 hover:from-blue-700 hover:to-slate-700' 
             : 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700'
         } text-white rounded-full p-3 sm:p-4 shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-500/20`}
         initial={{ 

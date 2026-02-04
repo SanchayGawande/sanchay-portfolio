@@ -48,7 +48,7 @@ const NavContactButton = () => {
 
         {/* Glow Effect */}
         <motion.div
-          className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/20 to-slate-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         />
       </motion.button>
 

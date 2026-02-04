@@ -16,23 +16,7 @@ body {
   color: #1f2937;
 }
 
-/* Custom Cursor Styles */
-* {
-  cursor: none !important;
-}
-
-/* Show default cursor on mobile/touch devices */
-@media (hover: none) {
-  * {
-    cursor: auto !important;
-  }
-}
-
-/* Performance optimizations for cursor */
-.cursor-trail {
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-}
+/* Default system cursor is now used */
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {

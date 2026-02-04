@@ -58,7 +58,7 @@ const Skills = () => {
     ai: {
       title: "AI/LLM/NLP",
       icon: <SparklesIcon className="w-6 h-6" />,
-      color: "from-purple-500 to-pink-500",
+      color: "from-slate-600 to-teal-500",
       skills: [
         { name: "GPT-4", level: 95, category: "LLM" },
         { name: "LLaMA", level: 85, category: "LLM" },
@@ -168,7 +168,7 @@ const Skills = () => {
     <section 
       id="skills"
       ref={sectionRef}
-      className="relative py-32 bg-gradient-to-br from-slate-50 via-white to-purple-50/30 dark:from-zinc-800 dark:via-zinc-900 dark:to-zinc-800 overflow-hidden"
+      className="relative py-32 bg-gradient-to-br from-slate-50 via-white to-slate-50/30 dark:from-zinc-800 dark:via-zinc-900 dark:to-zinc-800 overflow-hidden"
     >
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
@@ -202,7 +202,7 @@ const Skills = () => {
         >
           {/* Section Header */}
           <motion.div variants={itemVariants} className="mb-8">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-800 dark:text-purple-300 rounded-full text-sm font-medium mb-4">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800/30 text-slate-800 dark:text-slate-300 rounded-full text-sm font-medium mb-4">
               <CpuChipIcon className="w-4 h-4" />
               Technical Skills
             </span>
@@ -213,7 +213,7 @@ const Skills = () => {
             className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white mb-6"
           >
             Full-Stack & AI
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"> Technology Stack</span>
+            <span className="bg-gradient-to-r from-slate-600 to-teal-500 bg-clip-text text-transparent"> Technology Stack</span>
           </motion.h2>
 
           <motion.p 
@@ -276,7 +276,7 @@ const Skills = () => {
             >
               <div className="flex items-center justify-between mb-4">
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                  <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                     {skill.name}
                   </h3>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -346,7 +346,7 @@ const Skills = () => {
                 experienceSection.scrollIntoView({ behavior: 'smooth' });
               }
             }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-slate-600 to-teal-500 text-white font-semibold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
