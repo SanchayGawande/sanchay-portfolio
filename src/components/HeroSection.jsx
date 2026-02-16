@@ -160,8 +160,8 @@ const HeroSection = () => {
   // Handle resume download
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/Sanchay_Gawande_Software_Engineer_Rust.pdf';
-    link.download = 'Sanchay_Gawande_Software_Engineer_Rust.pdf';
+    link.href = '/Sanchay_Gawande_Software_Engineer.pdf';
+    link.download = 'Sanchay_Gawande_Software_Engineer.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
